@@ -1,0 +1,291 @@
+/* ========================
+
+	YOUR CUSTOM DEFINATION
+
+====================================================================================================================== */
+
+/* -----------------------
+	Default height and width
+--------------------------------------------------------------------------------------------------- */
+
+#smoothie {			
+	width: 100%;
+	height: 75vh;	
+}
+
+/* -----------------------
+	Media queries
+--------------------------------------------------------------------------------------------------- */
+
+@media(max-width:1024px){#smoothie {
+	// width: 100%;
+	height: 75vh;
+}}
+@media(max-width:768px){#smoothie {
+	// width: 100%;
+	height: 380px;
+}}
+@media(max-width:580px){#smoothie {
+	height: 280px;
+}}
+
+
+
+
+
+
+/* ========================
+
+	DO NOT CHANGE FROM HERE
+
+====================================================================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Gudea|Hammersmith+One');
+
+@colorPrimary : fade(#9e9e9e, 90%);
+
+#smoothie {	
+	margin: auto;
+	transition: all 0.2s;
+	overflow: hidden;	
+
+	ul{
+		display: none;
+	}
+
+	h1, h2, p, a{
+		z-index: 1;
+		position: relative;
+		font-family: 'Hammersmith One', sans-serif;
+	}
+
+	h1{	
+		font-size: 50px;
+		font-weight: 400;		
+		left: -1000px;
+		opacity: 0.8;
+		transition: all 0.5s ease-in-out 0.3s;
+		margin-top: 0; 
+		color: #fff;
+		text-shadow: 0px 0px 5px rgba(63, 92, 105, 0.53);
+
+		span{
+			padding-top: 10px;
+			display: inline;
+			background: @colorPrimary;
+			box-shadow: 10px 0 0 @colorPrimary, -10px 0 0 @colorPrimary;
+		}
+	}
+
+	p{
+		font-weight: 100;
+		bottom: -1000px;
+		font-size: 22px;
+		opacity: 0.8;
+		transition: all 0.5s ease-in-out 0.5s; 
+		font-family: 'Gudea', sans-serif;
+		line-height: 37px;
+		color: #fff;
+
+		span{
+			display: inline;
+			background: @colorPrimary;
+			box-shadow: 10px 0 0 @colorPrimary, -10px 0 0 @colorPrimary;
+			padding: 5px 0;
+		}
+
+	}
+
+	a{
+		font-family: 'Gudea', sans-serif;
+		font-size: 14px;
+		transition: all 0.5s ease-in-out 0s; 
+		display: inline-block;
+		background-color: #fff;
+		padding: 13px 0;
+		min-width: 140px;
+		text-align: center;
+		color: fadein(@colorPrimary, 30%);
+		border:2px solid @colorPrimary;
+	}
+
+	.smoothie____Placeholder {
+		height: inherit;
+		width: 100%;
+		position: relative;
+		background-color: gray;
+		overflow: hidden;
+		background-position: center center;
+		background-size: cover;
+		transition: background 1s ease-in-out 0.5s;
+		
+		.smoothie____Pagination____Left, .smoothie____Pagination____Right{
+			height: 100%;
+			width: 100px;
+			position: absolute;
+			top:0;
+			text-align: center;
+
+			span {
+				width: 50px;
+				height: 50px;
+				line-height: 46.5px;
+				display: inline-block;
+				position: absolute;
+				margin: auto;
+				background-color: white;
+				bottom: 0;
+				left: 0;
+				top: 0;
+				right: 0;
+				opacity: 0.5;
+				cursor: pointer;
+				transition: background 1s ease-in-out 0.5s;
+				font-family: monospace;
+    			border: 2px solid gray;
+    			color: gray;
+				font-size: 28px;
+
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+
+		.smoothie____Pagination____Left{
+			height: 100%;
+			width: 100px;
+			position: absolute;
+			top:0;
+			left: 0;
+			text-align: center;
+		}
+		
+		.smoothie____Pagination____Right{
+			height: 100%;
+			width: 100px;
+			position: absolute;
+			top:0;
+			right: 0;
+		}
+		.smoothie____Slide{
+			height: inherit;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			padding: 0 10px;
+			box-sizing: border-box;
+			opacity: 0;
+			margin:auto;
+			max-width: 1020px;
+
+			&.currentSlide{
+				opacity: 1;
+				h1{
+					left: 0;
+					opacity: 1;
+				}
+				p {
+					bottom: 0;
+					opacity: 1;
+				}
+				a{
+					-ms-transform: scale(1.2);
+					-webkit-transform: scale(1.2);
+					left: 5px;
+					text-decoration: none;
+			
+					&:hover {
+						box-shadow: 0px 0px 9px 2px rgba(255, 255, 255, 0.37);
+    					border-color: #607d8b;			
+					}
+				}
+			}
+
+			.smoothie____Slide____wrapper{
+				height: inherit;
+				width: inherit;
+				display: table-cell;
+				vertical-align: middle;
+				position: relative;			
+			}
+
+			
+		}
+	}
+}
+
+
+
+
+
+
+@media(max-width:768px){
+	#smoothie {
+		width: 100%;
+		height: 380px;
+		
+		h1{
+			font-size: 40px;
+		}
+		p{
+			font-size: 18px;
+		}
+
+		a{
+			font-size: 18px;
+		}
+
+		.smoothie____Placeholder {
+			.smoothie____Slide{
+				&.current{
+					a{
+						-ms-transform: scale(1);
+						-webkit-transform: scale(1);
+						left: -8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(max-width:580px){
+	#smoothie {
+		height: 280px;
+		
+		h1{
+			font-size: 34px;
+			text-align: center;
+		}
+		p{
+			font-size: 16px;
+			text-align: center;
+		}
+
+		a{
+			font-size: 16px;
+			display: block;
+			margin: auto;
+			min-width: 80%;
+			width: 80%;
+			padding: 7px;
+			border: 1px solid;
+			margin-top: 10px;
+		}
+
+		.smoothie____Placeholder {
+			.smoothie____Slide{
+				&.current{
+					a{
+						-ms-transform: scale(1);
+						-webkit-transform: scale(1);
+						left: -8px;
+					}
+				}
+			}
+		}
+	}
+}
