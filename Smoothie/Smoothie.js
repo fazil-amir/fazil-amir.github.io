@@ -67,7 +67,7 @@ var Smoothie = (function(public){
 				imgSrc: 		$(this).data('img-src'),
 				headline: 		$(this).data('headline'),
 				paragraph: 		$(this).data('paragraph'),
-				btnCaption: 	$(this).data('btn-caption') ? $(this).data('btn-caption') : '',
+				btnCaption: 		$(this).data('btn-caption') ? $(this).data('btn-caption') : '',
 				btnLink: 		$(this).data('btn-link') 	? $(this).data('btn-link') : '',
 				btnTarget: 		$(this).data('btn-target') 	? $(this).data('btn-target') : '_blank'
 			};
@@ -392,6 +392,6 @@ var Smoothie = (function(public){
 
 
 var s = new Smoothie({
-	slideSpeed: 	  2000,
+	slideSpeed: 	  6000,
 	smoothieCurrent: 'currentSlide container',
 });
