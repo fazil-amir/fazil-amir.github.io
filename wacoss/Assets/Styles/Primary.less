@@ -1,0 +1,662 @@
+
+/* ############################################################################################################################################### 
+																										
+	PRIMARY.LESS
+	Holds the final copy of styles. Includes all the mandatory files. Overrides Bootstrap as well
+																																			
+################################################################################################################################################# */
+
+
+
+/* ========================
+
+	Includes
+
+====================================================================================================================== */
+
+@import url('Includes.less');
+
+
+
+/* -----------------------
+	Bootstrap Overrides
+--------------------------------------------------------------------------------------------------- */
+
+body {
+	font-family: @fontPrimary;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background-color: @colorSmoke;
+	padding-top: 62px;
+}				
+
+*{
+	border-radius: 0px !important;
+}
+.navbar{
+	margin-bottom: 0;
+}
+
+.navbar-default {
+	border:none;
+	background-color: @colorSmoke;
+	.glyphicon{	
+		color: @colorPrimary;
+	}
+	*{
+		.transition(@delay:0.2s);
+	}
+}
+.navbar-nav > li > a {
+	line-height: 30px;
+	border-bottom: 2px solid @colorSmoke;
+    padding-top: 16px;
+    padding-bottom: 14px;
+}
+
+.navbar-brand  {
+	height: auto;
+}
+
+.navbar-toggle {
+	margin-top: 12px;
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus
+.navbar-default .navbar-nav>a, 
+.navbar-default .navbar-nav>a:hover, 
+.navbar-default .navbar-nav>a:focus  {
+    color: @colorSmoke;
+    background-color: @colorPrimary;
+    border-bottom: 2px solid @colorPrimary;;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #349cb2;
+    background-color: transparent;
+    border-bottom: 2px solid;
+}
+
+
+@media (max-width: 1024px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 2px solid;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+            padding-top: 13px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}     
+@media (max-width: 768px) {
+    .navbar-collapse {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container-fluid{
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@media(max-width:1200px) {
+	.container{
+		width: 98% !important;
+	}
+}
+
+/* -----------------------
+	Slider
+--------------------------------------------------------------------------------------------------- */
+.slider {
+	min-height: ~"calc(100vh - 62px)";
+	height: ~"calc(100vh - 62px)";
+	position: relative;
+
+	ul, li {
+		display: none;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.sliderWrapper {
+		min-height: ~"calc(100vh - 62px)";
+		height: ~"calc(100vh - 62px)";
+		background-image: url('../Images/Slider/1.jpg');
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+
+		.slideItem {
+			min-height: ~"calc(100vh - 62px)";
+			height: ~"calc(100vh - 62px)";
+			display: table;
+			width: 100%;
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+
+			.container{
+				overflow: hidden;
+					
+				.wrapper {
+					display: table-cell;
+					min-height: ~"calc(100vh - 82px)";
+					height: ~"calc(100vh - 82px)";
+					vertical-align: middle;
+					width: 800px;
+					padding: 30px 0;
+					h2{
+						margin-bottom: 25px;
+						font-size: 40px;
+						line-height: 68px;
+						
+						> span{		
+							padding: 10px;  			
+	    					background-color: fade(@colorPrimary, 35%);   
+	    					color: @colorWhite;   							
+						} 
+					} 
+
+					
+
+					p {
+						font-size: 22px;
+						line-height: 35px;
+						color: @colorWhite;
+					}
+
+				}
+				
+				@media (max-width: 900px){
+					.wrapper {
+						width: 100%;
+					}
+				}
+			}		
+
+			&:first-child{
+				visibility: visible;
+				opacity: 1;
+
+				> .wrapper{
+					margin-top: 0;
+				}
+
+			}
+		}
+	}
+}
+
+/* -----------------------
+	Forms, Input, Buttons
+--------------------------------------------------------------------------------------------------- */
+.btn {
+	padding: 16px;
+	font-size: 18px;
+	min-width: 160px;
+	.transition(@prop: all, @delay: 0.2s, @type: linear, @start: 0s);
+	border: none;
+	border-bottom:3px solid;
+	outline: none;
+	
+	&:active{
+		transform: translateY(4px);
+		outline: none;
+		border-bottom:3px solid @colorPrimary;
+	}
+	
+	&.btn-primary{
+		background-color: @colorPrimary;
+	}
+
+	&.btn-warning{
+		background-color: @colorSecondary;
+	}
+
+	&.btnAddRemove {
+		width: 34px;
+	    min-width: 0;
+	    padding: 8px;
+	    top: 28px;
+	    position: relative;
+	    left: -30px;
+	    text-align: center;
+		
+		&.holdEmpty{
+
+			&::after{
+				content: 'Please enter a name';
+				display: inline-block;
+				position: relative;
+				color: @colorSecondary;
+				left: 15px;
+				font-size: 14px;
+			}
+		}
+
+		&.holdName{
+			&::after{
+				content: 'Name does not look good';
+				display: inline-block;
+				position: relative;
+				color: @colorSecondary;
+				left: 15px;
+				font-size: 14px;
+			}
+		}
+	}
+
+	@media (max-width:768px){
+		&.btnAddRemove {
+			top: 0;
+			left: 0px;
+		}
+	}
+}
+.foodChoice{
+	width: 30px;
+}
+
+span.foodChoice {
+    padding-right: 25px;
+    display: inline-block;
+    width: auto;
+    top: -17px;
+    position: relative;
+    left: 7px;
+    font-size: 16px;
+}
+.form-group {
+
+	&.errorName {
+		.form-control{ 
+			border-color: @colorSecondary;
+		}
+
+		&::after{
+			content: 'Name is either not filler or typed incorrect';
+			display: inline-block;
+			position: relative;
+			color: @colorSecondary;
+			left: 0px;
+			font-size: 14px;
+		}
+	}
+	&.errorEmail{
+		.form-control{ 
+			border-color: @colorSecondary;
+		}
+
+		&::after{
+			content: 'Email is either not filler or typed incorrect';
+			display: inline-block;
+			position: relative;
+			color: @colorSecondary;
+			left: 0px;
+			font-size: 14px;
+		}
+	}
+}
+
+.form-control{
+	&:focus{
+		outline: none;
+		box-shadow: none;
+		border: 1px solid @colorPrimary;
+		-webkit-box-shadow: none
+	}	
+}
+
+/* -----------------------
+	Section
+--------------------------------------------------------------------------------------------------- */
+.section {
+	padding-bottom: 60px;
+
+	h1{
+		padding: 20px 0px;			
+	}
+
+	h2 {
+
+	}
+
+	h3{
+		margin-top: 35px;
+	}
+
+	h1, h2, h3 {
+		display: inline-block;
+		color: @colorHeadline;
+		text-transform: capitalize;
+
+		&::after{
+		    content: '';
+		    width: 40%;
+		    height: 3px;
+		    background-color: inherit;
+		    display: block;
+		    background-color: @colorHeadline;
+		    margin-top: 15px;
+		}
+	}
+
+	p{
+		font-size: 16px;
+		margin: 18px 0;
+	}
+
+	li{
+		font-size: 16px;
+		margin-top: 10px;
+	}
+}	
+
+
+/* -----------------------
+	Knowledge Management
+--------------------------------------------------------------------------------------------------- */
+
+#knowledgeManagement {
+	img.bulb{
+		margin-top: -127px;
+	    float: right;
+	    position: relative;
+	    z-index: -1;
+	    width: 100%;
+	}
+
+	@media(max-width:990px) {
+		.col-md-5{
+			display: none;
+		}
+	}
+}
+
+/* -----------------------
+	Workshop Info
+--------------------------------------------------------------------------------------------------- */
+
+#workshopInfo{
+	background-image: url('../Images/WorkshopBG.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	
+	h1, p, h3, ul, li {
+		color: #dadada;
+	}
+
+	.list {
+		margin-top: 50px;
+		background-color: fade(@colorWhite, 60%);
+		padding: 0px 20px 30px 20px;
+		box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.18);
+
+		li, h3{
+			color:@colorHeadline;
+		}
+	}
+
+	.btn{
+		margin-top: 50px;
+		margin-left: -15px;
+	}
+	@media (max-width: 768px) {
+		.btn{
+			margin-left: 15px;
+		}
+	}
+}
+
+
+/* -----------------------
+	Registration
+--------------------------------------------------------------------------------------------------- */
+
+#registration{
+	
+	.list {
+		margin-top: 50px;
+		background-color: @colorWhite;
+		padding: 0px 20px 30px 20px;
+		box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.18);
+
+		li, h3{
+			color:@colorHeadline;
+		}
+	}
+
+	#ticketContainer{
+		 overflow: auto; 
+
+		table {
+			background-color: @colorSmoke;
+		}
+		> div {		
+			display: none;
+			width: 650px;
+			/* overflow: auto; */
+
+			canvas{
+				display: block;
+				margin: auto;
+			}
+
+		}
+
+	}
+
+	.zz-zz {
+		table, td{padding: 5px;border: 1px solid #56a4b7; text-transform: capitalize;}
+	}
+	
+	#formContainer {
+		position: relative;
+		padding-top:15px;
+		padding-bottom: 15px;
+
+		.overlay{
+			display: none;;
+		}
+
+		&.disabled {
+			> .overlay{
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: rgba(248, 248, 248, 0.78);
+			z-index: 1;
+			left: 0;
+			top: 0;
+			cursor: wait;
+			background-image: url('../Images/Loading.gif');
+			background-image: url('../Images/Loading.svg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			border: 1px solid #dadada;
+				
+			}
+		}
+	}
+	.formRow{
+		padding-left: 50px;
+		position: relative;
+
+		span.count{
+			position: absolute;
+			top: 25px;
+			font-size: 22px;
+			height: 46px;
+			width: 46px;
+			background-color: @colorPrimary;
+			left: 0;
+			text-align: center;
+			line-height: 46px;
+			border: 1px solid lighten(@colorPrimary, 10%);
+			color: #fff;
+			left: 14px;
+		}
+		&.disabled{
+			input.fullName{
+				pointer-events: none;
+				background-color: darken(@colorSmoke, 10%);
+				cursor:crosshair !important;
+			}
+		}
+	}
+	
+	@media (max-width:768px){ 
+		.formRow {
+			margin-bottom: 20px;
+		}
+	}
+
+	.totalWrapper{
+		text-align: center;
+		color: @colorPrimary;
+		display: none;
+
+		i {
+			color: @colorSecondary;
+			top:3px;
+		}
+		&.open{
+			display: block;
+		}
+		
+		.total, .download{
+			text-align: center;
+			display: inline-block;
+			padding: 20px 50px;
+			font-size: 22px;
+			margin-top: 40px;
+			position: relative;
+			padding-bottom: 30px;
+			
+			.click{
+				position: absolute;
+			    left: 0;
+				bottom: 4px;
+				right: 0;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+
+			&.disabled{
+				display: none;
+			}
+			
+			&:hover{
+				i {
+					color: darken(@colorSecondary, 10%);
+				}
+			}
+		}
+		
+		.download{
+			display: none;
+			&.open{
+				display: inline-block;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.total{
+				margin-top: 10px;
+				width: 100%;
+			}
+		}
+		
+	}
+
+	.modal {
+		.modal-header{
+			padding: 30px 15px;
+		}
+		.table{
+			margin-bottom: 0;
+		}
+		.total{
+			text-align: right;
+			padding: 15px 0;
+			font-size: 18px;
+		}
+	}
+}
+
+
+#contact {
+	background: url('../Images/Texture.jpg');
+	border: 6px solid @colorWhite;
+	padding-top: 40px;
+	padding-bottom: 100px;
+
+	.card {
+		padding: 20px;
+		background-color: @colorPrimary;
+		border: 5px solid white;
+		padding-top: 50px;
+		.avatar {
+			text-align: center;
+			margin-bottom: -60px;
+			img {
+				border: 5px solid white;
+			}
+		}
+		.info{
+			background-color: #434c4e;
+			margin-left: -20px;
+			padding: 20px;
+			width: ~"calc(100% + 40px)";
+			margin-top: 20px;
+			margin-bottom: -20px;
+			padding-top: 65px;
+			text-align: center;
+			color: white;
+			padding-bottom: 40px;
+
+			.title {
+				font-size: 24px;
+			}
+
+			.desc{
+				font-size: 14px;
+				color: @colorSmoke;
+			}
+		}
+	}
+}
